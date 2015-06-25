@@ -1,0 +1,45 @@
+Stochastic Gradient Descent.
+
+1. Traditional Gradient Descent
+	cons: 1. Time consuming to compute n gradients. 
+	           2. Easy to trap in local optimum. 
+
+2.  Stochastic Gradient Descent.
+	1. Avoid local optimum. 
+	2. Solve scalable data. 
+
+
+Tricks. 
+Learning rate and updating. 
+a. Experiment with the learning rates 0 using a small sample of the training set.
+
+b. Use learning rates of the form  t=gamma_0/(1+ gamma_0*t)^-1
+
+c. Momentum. 
+	Description:
+		When updating the parameter, use the updation of w(t-1) at the last iteration. 
+ Ads: 
+(1) Smooth out the variations, when using one data to update is too sensitive sometimes.  
+(2) Speed up when direction are the same.
+		Usage:
+  Delta_w(t) = gamma_t*g(t) + alpha*w(t-1)    alpha  is usually 0.9  
+  w(t+1) = w(t) - Delta_w(t)
+		 
+
+d. RMSprop. 
+		Description:
+			It keeps running average of its recent gradient magnitudes and divides the next gradient by this average, so that loosely gradient values are normalized. 
+		Usages:
+			Mean_Square(w,t) = 0.9*Mean_Square(w,t-1) + 0.1*g^2(t)
+			Delta_w(t)  = gamma*g(t) / (Mean_Square(w,t)+u)     u is smooth value
+			w(t+1) = w(t) - Delta_w(t)
+
+e. Combine RMSprop and momentum trick.
+
+f.  Adaptive learning rate.
+Description:
+It provides a specific learning rate for each parameter.
+Usage:
+gamma(t,i) = gamma(0) / (sum_tt(g(tt,i)))^0.5
+ 
+			
