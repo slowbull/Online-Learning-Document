@@ -2,7 +2,7 @@
 """
 author: Jonny
 
-Notation: Please run Gen_data.py at first.
+Notation: Please run genData.py at first.
 """
 
 from __future__ import print_function
