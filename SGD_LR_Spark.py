@@ -2,6 +2,8 @@
 """
 author: Jonny
 
+Reference： http://martin.zinkevich.org/publications/nips2010.pdf
+
 Notation: Please run genData.py at first.
 """
 
